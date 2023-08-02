@@ -21,10 +21,14 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.boot:spring-boot-starter-data-jpa"
     runtimeOnly "com.h2database:h2"
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
 
     testImplementation "org.spockframework:spock-core:1.2-groovy-2.4"
     testImplementation "org.spockframework:spock-spring:1.2-groovy-2.4"
     testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testCompileOnly 'org.projectlombok:lombok:1.18.28'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 }
 
 // Here we are going to make sure the client UI does a package install with yarn before building. This uses the gradle node plugin
