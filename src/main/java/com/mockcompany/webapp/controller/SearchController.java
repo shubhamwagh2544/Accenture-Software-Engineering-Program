@@ -20,14 +20,14 @@ public class SearchController {
     public Collection<ProductItem> search(@RequestParam("query") String query) {
 
         return this.productItemRepository
-                .findProductItemsCustomQuery(query.toLowerCase());
-//                .findAll()
-//                .stream()
-//                .filter(productItem -> productItem.getName().equalsIgnoreCase(query) ||
-//                        productItem.getName().toLowerCase().contains(query.toLowerCase()) ||
-//                        productItem.getDescription().toLowerCase().contains(query.toLowerCase())
-//                )
-//                .collect(Collectors.toList());
+                //.findProductItemsCustomQuery(query.toLowerCase());
+                .findAll()
+                .stream()
+                .filter(productItem -> productItem.getName().equalsIgnoreCase(query) ||
+                        productItem.getName().toLowerCase().contains(query.toLowerCase()) ||
+                        productItem.getDescription().toLowerCase().contains(query.toLowerCase())
+                )
+                .collect(Collectors.toList());
 
     }
 }
